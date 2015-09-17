@@ -242,10 +242,11 @@ pic <- pic + scale_color_gradient2(low="blue", mid="green", high="red")
 pic
 
 ### tsne library experiment ###################################################
+## Clear environment and load X!
+
 library(tsne)
 yd <- tsne(X, perplexity=40)
 
-library(ggplot2)
 dat <- data.frame(Dim1=yd[,1], Dim2=yd[,2])
 ggplot(dat, aes(x=Dim1, y=Dim2, color=labels)) +
     geom_point(aes(colour = factor(labels)), size=3) 
